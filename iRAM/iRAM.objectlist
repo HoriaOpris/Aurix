@@ -1,0 +1,5 @@
+src/cint_tc27x.o
+src/hello.o
+src/interrupts.o
+src/system_tc27x.o
+src/timer.o
