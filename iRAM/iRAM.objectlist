@@ -3,3 +3,6 @@ src/hello.o
 src/interrupts.o
 src/system_tc27x.o
 src/timer.o
+src/uart_init_poll.o
+src/uart_poll.o
+src/usr_sprintf.o
