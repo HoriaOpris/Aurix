@@ -13,8 +13,7 @@
 
 static volatile unsigned task_1ms_active = 0;
 
-static void my_puts(const char *str)
-{
+static void my_puts(const char *str) {
 	char buffer[128];
 	char *ptr;
 
@@ -43,8 +42,24 @@ int main(void) {
 		if (task_1ms_active) {
 			task_1ms_active = 0;
 
-			my_puts("Your choice please");
+			static unsigned second_cnt;
 
+			if (second_cnt >= 1000) {
+				second_cnt = 0;
+
+				static unsigned no_of_seconds_passed;
+				char str[128] = "0 minutes 00 seconds have passed";
+
+				str[0] = (no_of_seconds_passed / 60) + 48;
+				str[10] = ((no_of_seconds_passed % 60) / 10) + 48;
+				str[11] = ((no_of_seconds_passed % 60) % 10) + 48;
+
+				no_of_seconds_passed++;
+
+				my_puts(str);
+			} else {
+				second_cnt++;
+			}
 		} else {
 			task_idle_count++;
 		}
