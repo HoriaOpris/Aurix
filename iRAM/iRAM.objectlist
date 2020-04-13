@@ -1,3 +1,4 @@
+src/ASC.o
 src/cint_tc27x.o
 src/hello.o
 src/interrupts.o

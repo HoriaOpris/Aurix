@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/ASC.c \
 ../src/cint_tc27x.c \
 ../src/hello.c \
 ../src/interrupts.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../src/usr_sprintf.c 
 
 OBJS += \
+./src/ASC.o \
 ./src/cint_tc27x.o \
 ./src/hello.o \
 ./src/interrupts.o \
@@ -24,6 +26,7 @@ OBJS += \
 ./src/usr_sprintf.o 
 
 C_DEPS += \
+./src/ASC.d \
 ./src/cint_tc27x.d \
 ./src/hello.d \
 ./src/interrupts.d \
